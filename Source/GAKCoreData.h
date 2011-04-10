@@ -3,14 +3,9 @@
 
 @interface GAKCoreData: NSObject {
 
-@private
-
     NSString *dbname;
     NSPersistentStoreCoordinator *coordinator;
     NSCache *queryCache;
-
-@public
-
     NSManagedObjectContext *managedObjectContext;
 
 }
