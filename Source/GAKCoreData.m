@@ -2,7 +2,7 @@
 #import <objc/runtime.h>
 #include <unistd.h>
 
-@implementation DataManager
+@implementation GAKCoreData
 
 - (id) initWithDBName:(NSString *)name
 {

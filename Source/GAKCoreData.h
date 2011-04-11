@@ -5,7 +5,6 @@
 
     NSString *dbname;
     NSPersistentStoreCoordinator *coordinator;
-    NSCache *queryCache;
     NSManagedObjectContext *managedObjectContext;
 
 }
@@ -24,7 +23,6 @@
 - (NSArray *) query:(NSString *)entityType sort:(NSArray *)sort predicate:(NSString *)predStr arguments:(va_list)args;
 - (NSArray *) query:(NSString *)entityType sort:(NSArray *)sort predicate:(NSString *)predStr, ...;
 - (id) getOrCreateEntity:(NSString *)entityType predicate:(NSString *)predStr, ...;
-- (void) flushCache;
 
 - (void) deleteEntity:(id)ent;
 - (void) deleteEntity:(NSString *)entityType predicate:(NSString *)predStr, ...;
