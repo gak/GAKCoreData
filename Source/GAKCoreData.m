@@ -86,6 +86,15 @@
 }
 
 #pragma mark -
+#pragma mark Creating
+
+- (id) createEntity:(NSString *)type
+{
+    assert(managedObjectContext);
+    return [NSEntityDescription insertNewObjectForEntityForName:type inManagedObjectContext:managedObjectContext];
+}
+
+#pragma mark -
 #pragma mark Saving
 
 - (void) save
@@ -127,11 +136,6 @@
 - (NSArray *) getResults:(NSFetchRequest *)request
 {
     return [managedObjectContext executeFetchRequest:request error:0];
-}
-
-- (NSEntityDescription *) getNewEntity:(NSString *)type
-{
-    return [NSEntityDescription insertNewObjectForEntityForName:type inManagedObjectContext:managedObjectContext];
 }
 
 - (NSFetchRequest *) getFetchRequest:(NSString *)entity
@@ -188,7 +192,7 @@
     // If the row doesn't exist, we'll create a new one
     if (![results count]) {
 
-        entity = [self getNewEntity:entityType];
+        entity = [self createEntity:entityType];
 
     } else {
 

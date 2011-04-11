@@ -13,11 +13,13 @@
 - (NSString *) getWriteDirectory;
 - (void) wipeDatabase;
 - (void) save;
-- (NSArray *) getResults:(NSFetchRequest *)request;
 - (NSString *) getDatabasePath;
+
+- (id) createEntity:(NSString *)type;
+
+- (NSArray *) getResults:(NSFetchRequest *)request;
 - (void) initManagedObjectContext;
 
-- (NSEntityDescription *) getNewEntity:(NSString *)type;
 - (NSFetchRequest *) getFetchRequest:(NSString *)entity;
 - (NSArray *) query:(NSString *)entityType sort:(NSArray *)sort;
 - (NSArray *) query:(NSString *)entityType sort:(NSArray *)sort predicate:(NSString *)predStr arguments:(va_list)args;
