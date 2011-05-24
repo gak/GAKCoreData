@@ -235,6 +235,11 @@
     return obj;
 }
 
+- (NSEntityDescription *) updateModelFromDict:(NSString *)model dict:(NSDictionary *)dict
+{
+    return [self updateModelFromDict:model dict:dict idField:@"id"];
+}
+
 - (void) copyFromDictToModel:(NSDictionary *)dict model:(id)model
 {
     for (NSPropertyDescription *property in [model entity]) {

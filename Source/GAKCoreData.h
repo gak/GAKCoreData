@@ -30,6 +30,7 @@
 - (void) deleteEntity:(NSString *)entityType predicate:(NSString *)predStr, ...;
 
 - (NSEntityDescription *) updateModelFromDict:(NSString *)model dict:(NSDictionary *)dict idField:(NSString *)idField;
+- (NSEntityDescription *) updateModelFromDict:(NSString *)model dict:(NSDictionary *)dict;
 - (void) copyFromDictToModel:(NSDictionary *)dict model:(id)model;
 - (NSMutableDictionary *) getDictFromModel:(id)model;
 
