@@ -26,8 +26,6 @@
 - (NSString *) getDatabasePath
 {
     NSString *dbPath = [NSString stringWithFormat:@"%@/%@.db", [self getWriteDirectory], dbname];
-
-    NSLog(@"Database: %@", dbPath);
     return dbPath;
 }
 
